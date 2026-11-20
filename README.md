@@ -45,6 +45,9 @@ This project can run as a webpage in the PS4 browser, subject to browser compati
 
 Those functions require privileged platform-level integration and cannot be achieved by adding JavaScript or wrapping it in an Android app. This project does not spoof console identity or bypass Sony authentication.
 
+## PS4 firmware research
+See [PS4 firmware 14.02 compatibility notes](docs/PS4-14.02-compatibility.md). The project currently treats 14.02 homebrew runtime compatibility as unverified; compiling an application is not proof that it can run on a particular console.
+
 ## Project structure
 - `index.html` — page structure and PWA metadata.
 - `styles.css` — responsive visual design.
@@ -54,6 +57,7 @@ Those functions require privileged platform-level integration and cannot be achi
 - `scripts/copy-web.js` — prepares web assets for Android.
 - `.github/workflows/` — validation, Pages deployment and Android APK build workflows.
 - `docs/ROADMAP.md` — practical next stages and platform boundaries.
+- `docs/PS4-14.02-compatibility.md` — firmware research and verification plan.
 
 ## Hosting the web version
 The repository includes a GitHub Pages deployment workflow. In repository **Settings → Pages**, set the build/deployment source to **GitHub Actions**. The workflow will then publish the static site after a push to `main`. The PWA install prompt is browser-dependent; the PS4 browser does not gain native shell privileges from hosting or installing this page.
