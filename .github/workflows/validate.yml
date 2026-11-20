@@ -14,7 +14,9 @@ jobs:
         with:
           node-version: 22
       - name: Check JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check scripts/copy-web.js
       - name: Check required project files
         run: |
           test -s index.html
@@ -22,6 +24,9 @@ jobs:
           test -s app.js
           test -s manifest.webmanifest
           test -s sw.js
+          test -s package.json
+          test -s capacitor.config.json
+          test -s scripts/copy-web.js
           grep -q 'styles.css' index.html
           grep -q 'app.js' index.html
           grep -q 'manifest.webmanifest' index.html
