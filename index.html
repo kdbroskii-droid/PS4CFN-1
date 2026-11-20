@@ -1,15 +1,53 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080b12"><title>Orbis UI</title>
-<link rel="stylesheet" href="styles.css"></head><body>
-<header class="top"><div class="logo">◈ ORBIS</div><div class="status"><span id="clock"></span>　● Online UI preview　<button class="profile" id="profile">K</button></div></header>
-<main><p class="eyebrow">WELCOME BACK</p><h1 id="greeting">Good evening</h1><p class="muted">What are we playing today?</p>
-<section class="games" id="games">
-<button class="game selected" data-game="Astro's Playroom"><span class="art a1">ASTRO'S PLAYROOM</span><span class="name">Astro's Playroom</span><small>Continue playing</small></button>
-<button class="game" data-game="Gran Turismo 7"><span class="art a2">GRAN TURISMO 7</span><span class="name">Gran Turismo 7</span><small>Recently played</small></button>
-<button class="game" data-game="Fortnite"><span class="art a3">FORTNITE</span><span class="name">Fortnite</span><small>Recently played</small></button>
-<button class="game" data-game="Minecraft"><span class="art a4">MINECRAFT</span><span class="name">Minecraft</span><small>Game library</small></button>
-<button class="game" data-game="Media Gallery"><span class="art a5">MEDIA GALLERY</span><span class="name">Media Gallery</span><small>Captures</small></button>
-<button class="game" data-action="library"><span class="art a6">▦</span><span class="name">Game Library</span><small>View collection</small></button></section>
-<section class="lower"><button class="quick" data-action="store">▣<b>PlayStation Store</b><small>Store preview</small></button><button class="quick" data-action="settings">⚙<b>Settings</b><small>Personalise dashboard</small></button><button class="quick" data-action="notifications">♧<b>Notifications</b><small>Activity</small></button><button class="quick" data-action="control">⌘<b>Control Centre</b><small>Quick settings</small></button></section>
-</main>
-<div class="overlay hidden" id="overlay"><div class="panel"><button class="close" id="close">×</button><p class="eyebrow" id="eyebrow">CONTROL CENTRE</p><h2 id="title">Quick settings</h2><div id="content" class="grid"></div><p class="muted" id="foot">× Select　　◯ Back</p></div></div><div class="hints">× Select　　◯ Back　　OPTIONS Menu　　M / Touchpad: Control Centre</div><script src="app.js" defer></script></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Orbis UI — a PS5-inspired dashboard concept.">
+  <meta name="application-name" content="Orbis UI">
+  <title>Orbis UI</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="logo"><span class="logo-mark">◈</span> ORBIS</div>
+    <div class="status"><span id="clock"></span><span class="online"><i></i> Dashboard ready</span><button class="profile" id="profile" aria-label="Open profile">K</button></div>
+  </header>
+  <main>
+    <p class="eyebrow">WELCOME BACK</p>
+    <h1 id="greeting">Good evening</h1>
+    <p class="muted">What are we playing today?</p>
+    <div class="section-heading"><h2>Recently played</h2><span class="muted" id="game-count">6 items</span></div>
+    <section class="games" id="games" aria-label="Games and apps">
+      <button class="game selected" data-game="Astro's Playroom"><span class="art a1">ASTRO'S PLAYROOM</span><span class="name">Astro's Playroom</span><small>Continue playing</small></button>
+      <button class="game" data-game="Gran Turismo 7"><span class="art a2">GRAN TURISMO 7</span><span class="name">Gran Turismo 7</span><small>Recently played</small></button>
+      <button class="game" data-game="Fortnite"><span class="art a3">FORTNITE</span><span class="name">Fortnite</span><small>Recently played</small></button>
+      <button class="game" data-game="Minecraft"><span class="art a4">MINECRAFT</span><span class="name">Minecraft</span><small>Game library</small></button>
+      <button class="game" data-game="Media Gallery"><span class="art a5">MEDIA GALLERY</span><span class="name">Media Gallery</span><small>Captures</small></button>
+      <button class="game" data-action="library"><span class="art a6">▦</span><span class="name">Game Library</span><small>View collection</small></button>
+    </section>
+    <div class="section-heading"><h2>Explore</h2></div>
+    <section class="lower">
+      <button class="quick" data-action="store"><span class="quick-icon">▣</span><b>PlayStation Store</b><small>Store preview</small></button>
+      <button class="quick" data-action="settings"><span class="quick-icon">⚙</span><b>Settings</b><small>Personalise dashboard</small></button>
+      <button class="quick" data-action="notifications"><span class="quick-icon">♧</span><b>Notifications</b><small>Activity</small></button>
+      <button class="quick" data-action="control"><span class="quick-icon">⌘</span><b>Control Centre</b><small>Quick settings</small></button>
+    </section>
+  </main>
+  <div class="overlay hidden" id="overlay" aria-hidden="true">
+    <section class="panel" role="dialog" aria-modal="true" aria-labelledby="title">
+      <button class="close" id="close" aria-label="Close panel">×</button>
+      <p class="eyebrow" id="eyebrow">CONTROL CENTRE</p>
+      <h2 id="title">Quick settings</h2>
+      <div id="content" class="panel-content"></div>
+      <p class="muted panel-foot">× Select　　◯ Back</p>
+    </section>
+  </div>
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+  <footer class="hints"><span>× Select</span><span>◯ Back</span><span>OPTIONS Menu</span><span>M: Control Centre</span><span id="connection">Offline-ready</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
