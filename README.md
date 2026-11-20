@@ -3,7 +3,7 @@
 A responsive browser-based dashboard inspired by the PS5 home screen. It is a front-end concept and does not replace or modify the PS4 system software.
 
 ## Run
-Open `index.html` in a modern browser. No build step or dependencies are required.
+Open `index.html` in a modern browser. The project is split into `index.html`, `styles.css` and `app.js`; no build step or dependencies are required.
 
 ## Included
 - PS5-inspired home screen with game tiles.
@@ -15,6 +15,7 @@ Open `index.html` in a modern browser. No build step or dependencies are require
 
 ## Controls
 - D-pad / left stick: navigate tiles.
+- L1 / R1: jump backward / forward through the game tiles.
 - Cross / Enter: select.
 - Circle / Escape / Backspace: back.
 - Options / M: open Control Centre (controller mapping varies by browser).
