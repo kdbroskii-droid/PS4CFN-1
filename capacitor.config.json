@@ -1,0 +1,6 @@
+{
+  "appId": "com.kdbroskii.orbisui",
+  "appName": "Orbis UI",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
